@@ -36,9 +36,9 @@ describe("RatingsListComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("RatingsList component has proper structure - should have five a total of 10 <span> tags (5 for the average and 10 for the 2 different ratings)", () => {
-    const stars = compiledComponent.queryAll(By.css("app-rating > span"));
-    expect(stars.length).toBe(10);
+  it("RatingsList component has proper structure - should have five a total of 15 <span> tags (5 for the average and 10 for the 2 different ratings)", () => {
+    const stars = getStars();
+    expect(stars.length).toBe(15);
   });
 
   it("RatingsList component has proper structure - should have 2 <h4> tags for names and the names be in proper order", () => {

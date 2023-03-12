@@ -13,6 +13,8 @@ describe("StarRatingsPageComponent", () => {
   let fixture: ComponentFixture<StarRatingsPageComponent>;
   let compiledComponent: DebugElement;
 
+  const getStars = () => compiledComponent.queryAll(By.css("span"));
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
@@ -35,9 +37,9 @@ describe("StarRatingsPageComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("StarRatingsPage component has proper structure - should have five a total of 15 <span> tags for stars on entire page", () => {
-    const stars = compiledComponent.queryAll(By.css("app-rating > span"));
-    expect(stars.length).toBe(15);
+  it("StarRatingsPage component has proper structure - should have five a total of 25 <span> tags for stars on entire page", () => {
+    const stars = getStars();
+    expect(stars.length).toBe(25);
   });
 
   it("StarRatingsPage component has proper structure - should have 3 <h4> tag for names and the names be in proper order", () => {
