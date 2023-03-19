@@ -1,0 +1,11 @@
+<div class="app-wrapper">
+    <h3>My Friends</h3>
+    <div class="error" *ngIf="error"><h4>{{error}}</h4></div>
+
+    <ul>
+        <li *ngFor="let friend of friends; let i= index">
+            <span>{{friend.name}}</span>
+            <button (click)="addFriendLike(friend.id)" [disabled]="friend.disabled">Like {{friend.likeCount}}</button>
+        </li>
+    </ul>
+</div>

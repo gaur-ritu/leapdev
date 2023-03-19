@@ -1,0 +1,23 @@
+
+<div class="ratings__item">
+    <table>
+        <tr>
+            <td *ngFor="let i of [].constructor(rate)">
+                <span [innerHtml]="FILLED_STAR"></span>
+            </td>
+            <td *ngFor="let i of [].constructor(5-rate)">
+                <span [innerHtml]="EMPTY_STAR"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>{{name}}</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>{{content}}</p>
+            </td>
+        </tr>
+    </table>
+</div>

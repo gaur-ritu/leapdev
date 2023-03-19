@@ -1,0 +1,13 @@
+
+<div class="ratings__average">
+    <table>
+        <tr>
+            <td *ngFor="let i of [].constructor(avgRating)">
+                <span [innerHtml]="FILLED_STAR"></span>
+            </td>
+            <td *ngFor="let i of [].constructor(MAX_STAR-avgRating)">
+                <span [innerHtml]="EMPTY_STAR"></span>
+            </td>
+        </tr>
+    </table>
+</div>

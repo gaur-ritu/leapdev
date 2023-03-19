@@ -1,9 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { RatingsItem } from "../../data/rating";
 
 @Component({
   selector: "app-ratings-list",
-  template: "",
+  templateUrl: "./ratings-list.component.html",
 })
 export class RatingsListComponent {
-  ratings: any;
+  @Input() ratings: RatingsItem[];
+
 }
