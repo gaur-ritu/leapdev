@@ -1,6 +1,6 @@
-import { Component, Input, AfterContentInit  } from "@angular/core";
+import { Component, Input, AfterContentChecked  } from "@angular/core";
 import { RatingsItem } from "../../data/rating";
-import { StarRatingService } from "../../data/star-rating.service";
+import { StarRatingService } from "../../star-rating.service";
 
 @Component({
   selector: "app-rating",
@@ -8,7 +8,7 @@ import { StarRatingService } from "../../data/star-rating.service";
   host: {'class': 'ratings__item'}
 })
 
-export class RatingComponent implements AfterContentInit {
+export class RatingComponent implements AfterContentChecked {
   @Input() ratingsItem: RatingsItem;
   name: any;
   content: any;
@@ -17,12 +17,11 @@ export class RatingComponent implements AfterContentInit {
  
   constructor(private starRatingSvc: StarRatingService){}
 
-  ngAfterContentInit() {
+  ngAfterContentChecked() {
     this.setRatingData(this.ratingsItem);
   }
   
   setRatingData(item: RatingsItem): void {
-    console.log("item :::::"+ item);
     if(item) {
       this.starArray = this.starRatingSvc.setStar(item.rate);
       this.name = item.name;

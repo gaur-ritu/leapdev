@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MAX_STARS, FILLED_STAR, EMPTY_STAR } from 'src/app/contstant';
-import { RatingsItem } from './rating';
+import { RatingsItem } from './data/rating';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,7 @@ export class StarRatingService {
   public setStar(rate: number): any[] {
     let arr = [];
     for(let i=0; i<MAX_STARS; i++){
-      if(i<rate)
+      if(rate && i<rate)
       arr[i] = FILLED_STAR;
       else
       arr[i] = EMPTY_STAR;

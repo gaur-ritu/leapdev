@@ -6,6 +6,7 @@ import { AverageRatingComponent } from "./components/average-rating/average-rati
 import { RatingComponent } from "./components/rating/rating.component";
 import { RatingsListComponent } from "./components/ratings-list/ratings-list.component";
 import { StarRatingsPageComponent } from "./pages/star-ratings-page.component";
+import { StarRatingService } from "./star-rating.service";
 
 const starRatingsRoutes: Routes = [
   { path: "", component: StarRatingsPageComponent },
@@ -19,5 +20,6 @@ const starRatingsRoutes: Routes = [
     RatingComponent,
     RatingsListComponent,
   ],
+  providers: [StarRatingService]
 })
 export class StarRatingsModule {}

@@ -1,6 +1,6 @@
 import { AfterContentChecked, Component, Input, OnChanges } from "@angular/core";
 import { RatingsItem } from "../../data/rating";
-import { StarRatingService } from "../../data/star-rating.service";
+import { StarRatingService } from "../../star-rating.service";
 
 @Component({
   selector: "app-average-rating",
@@ -13,8 +13,7 @@ export class AverageRatingComponent implements AfterContentChecked {
 avgRating: any;
 starArray: any[] = [];
 
-constructor(private starRatingSvc: StarRatingService){
-}
+constructor(private starRatingSvc: StarRatingService){}
 
 ngAfterContentChecked() {
   if(this.ratings){
