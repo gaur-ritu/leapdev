@@ -9,25 +9,16 @@ import { StarRatingService } from "../../star-rating.service";
 })
 
 export class RatingComponent implements AfterContentChecked {
-  @Input() ratingsItem: RatingsItem;
-  name: any;
-  content: any;
-  rate: any;
+  @Input() name: any;
+  @Input() content: any;
+  @Input() rate: any;
   starArray: any[] = [];
  
   constructor(private starRatingSvc: StarRatingService){}
 
   ngAfterContentChecked() {
-    this.setRatingData(this.ratingsItem);
-  }
-  
-  setRatingData(item: RatingsItem): void {
-    if(item) {
-      this.starArray = this.starRatingSvc.setStar(item.rate);
-      this.name = item.name;
-      this.content = item.content;
-      this.rate = item.rate;
-      }
+    if(this.rate)
+    this.starArray = this.starRatingSvc.setStar(this.rate);
   }
 }
 
